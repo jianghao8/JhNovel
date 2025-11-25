@@ -1,6 +1,19 @@
-node_modules
-dist
-out
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Build outputs
+dist/
+out/
+release/
+*.log
+
+# Editor / OS
 .DS_Store
-.eslintcache
-*.log*
+Thumbs.db
+.vscode/
+.idea/
