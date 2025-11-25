@@ -1,0 +1,50 @@
+appId: com.jhnovel.app
+productName: JhNovel
+copyright: Copyright © 2025 JhNovel
+
+# 输出目录配置
+directories:
+  output: dist
+  buildResources: resources
+
+# 核心文件打包规则
+files:
+  - from: out
+    to: out
+    filter:
+      - "**/*"
+  - from: .
+    filter:
+      - "package.json"
+
+# Windows 打包配置
+win:
+  executableName: JhNovel
+  # 确保你 resources 目录下有 icon.png，如果没有，这里会报错
+  # 也可以改为 build/icon.ico (取决于你图标放哪了)
+  icon: resources/icon.ico
+  target: nsis
+
+# 安装包配置 (NSIS)
+nsis:
+  oneClick: false                        # 允许用户选择安装路径 (不做静默安装)
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true            # 创建桌面快捷方式
+  createStartMenuShortcut: true          # 创建开始菜单快捷方式
+  shortcutName: JhNovel
+  deleteAppDataOnUninstall: true         # 卸载时清除数据 (可选)
+
+# 文件关联配置 (双击 txt/epub 自动用本软件打开)
+fileAssociations:
+  - ext:
+      - txt
+    name: Text Document
+    description: Plain Text File
+    role: Editor
+    icon: resources/icon.ico
+  - ext:
+      - epub
+    name: EPUB Book
+    description: Electronic Publication
+    role: Viewer
+    icon: resources/icon.ico

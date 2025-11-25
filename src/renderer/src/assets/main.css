@@ -1,0 +1,70 @@
+/* src/renderer/src/assets/main.css */
+
+/* Tailwind 基本指令 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ 亮色主题 ============ */
+:root {
+  /* 背景 / 文字 */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  /* 卡片 / 边框 */
+  --card: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%;
+
+  /* 主色（按钮、强调） */
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+
+  /* 次级 / 弱化文字 */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+}
+
+/* ============ 暗色主题（html 上有 .dark 时生效） ============ */
+html.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --border: 217.2 32.6% 17.5%;
+
+  --primary: 210 40% 96.1%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+}
+
+/* 全局基础样式 */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Microsoft YaHei', sans-serif;
+}
+
+/* 滚动条简单美化（可选） */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.2);
+}
